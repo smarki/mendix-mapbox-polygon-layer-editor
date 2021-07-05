@@ -1,0 +1,5 @@
+dist/
+node_modules/
+C:\\Users\\smark\\Documents\\Mendix\\MapsApp/
+*.log
+.env

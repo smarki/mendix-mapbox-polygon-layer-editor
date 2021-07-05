@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="smarki@github.com.mapeditor.MapEditor" pluginWidget="true" needsEntityContext="true" offlineCapable="true" supportedPlatform="Web"
+    xmlns="http://www.mendix.com/widget/1.0/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>Map Editor</name>
+    <description>Draw custom interactive polygons on MapBox maps</description>
+    <icon/>
+    <properties>
+        <propertyGroup caption="1. Token setup">
+            <property key="mapboxToken" type="string" required="true">
+                <caption>Mapbox Token</caption>
+                <description>For Mapbox to work you will need a personal Mapbox token.</description>
+            </property>
+        </propertyGroup>
+        <propertyGroup caption="2. Map setup">
+            <property key="fullScreenControlEnabled" type="boolean" required="true" defaultValue="false">
+                <caption>Enable full screen button</caption>
+                <description>Provide a button to toggle the map full screen.</description>
+            </property>
+            <property key="geolocationControlEnabled" type="boolean" required="true" defaultValue="false">
+                <caption>Enable Geolocation button</caption>
+                <description>Provide a button control that uses the browser's geolocation to locate the user on the ma</description>
+            </property>
+        </propertyGroup>
+        <propertyGroup caption="3. Setup Draw Controls">
+            <property key="drawControlsEnabled" type="boolean" required="true" defaultValue="false">
+                <caption>Enable draw controls</caption>
+                <description>Provide buttons to draw polygons on the map.</description>
+            </property>
+            <property key="currentPolygon" type="attribute" required="false">
+                <caption>Current polygon coordinates</caption>
+                <description>Attribute to be set when the polygon was created.</description>
+                <attributeTypes>
+                    <attributeType name="String"/>
+                </attributeTypes>
+            </property>
+            <property key="onPolygonCreatedAction" type="action" required="false">
+                <caption>Action to be called when a polygon is created</caption>
+                <description>An action that is called when the polygon has been created.</description>
+            </property>
+        </propertyGroup>
+        <propertyGroup caption="4. Polygon source">
+            <property key="polygonsSource" type="datasource" required="true" isList="true">
+                <caption>Polygon source</caption>
+                <description></description>
+            </property>
+            <property key="coordinates" type="attribute" dataSource="polygonsSource" required="true">
+                <caption>Coordinates</caption>
+                <description></description>
+                <attributeTypes>
+                    <attributeType name="String"/>
+                </attributeTypes>
+            </property>
+        </propertyGroup>
+
+    </properties>
+</widget>
